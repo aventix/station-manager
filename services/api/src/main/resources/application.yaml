@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: api
+  docker:
+    compose:
+      file: ../../infra/docker/compose.yaml
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/station_manager
+    username: station_manager
+    password: station_manager
