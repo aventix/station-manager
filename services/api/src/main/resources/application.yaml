@@ -4,7 +4,11 @@ spring:
   docker:
     compose:
       file: ../../infra/docker/compose.yaml
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/station-manager
   datasource:
     url: jdbc:postgresql://localhost:5432/station_manager
     username: station_manager
