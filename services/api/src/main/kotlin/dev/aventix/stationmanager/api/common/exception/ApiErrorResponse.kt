@@ -7,5 +7,6 @@ data class ApiErrorResponse(
     val status: Int,
     val error: String,
     val message: String,
-    val path: String
+    val path: String,
+    val validationErrors: Map<String, String>? = null
 )
