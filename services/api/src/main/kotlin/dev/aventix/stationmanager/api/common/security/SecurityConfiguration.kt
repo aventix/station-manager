@@ -13,8 +13,8 @@ class SecurityConfiguration {
             .csrf { it.disable() }
             .authorizeHttpRequests {
                 it
-                    .requestMatchers("/api/health").permitAll()
-                    .anyRequest().authenticated()
+                    //.requestMatchers("/api/health", "/api/v1/stations/**").permitAll()
+                    .anyRequest().permitAll()
             }
             .build()
     }
