@@ -1,7 +1,8 @@
-package dev.aventix.stationmanager.api.user
+package dev.aventix.stationmanager.api.user.access
 
 import dev.aventix.stationmanager.api.station.StationEntity
 import dev.aventix.stationmanager.api.station.role.StationRoleEntity
+import dev.aventix.stationmanager.api.user.profile.UserProfileEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id

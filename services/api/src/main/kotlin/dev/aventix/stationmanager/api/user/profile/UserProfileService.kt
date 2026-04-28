@@ -1,4 +1,4 @@
-package dev.aventix.stationmanager.api.user
+package dev.aventix.stationmanager.api.user.profile
 
 import dev.aventix.stationmanager.api.common.security.CurrentUser
 import org.springframework.stereotype.Service

@@ -4,7 +4,7 @@ import dev.aventix.stationmanager.api.common.exception.StationNotFoundException
 import dev.aventix.stationmanager.api.station.dto.CreateStationRequest
 import dev.aventix.stationmanager.api.station.dto.StationResponse
 import dev.aventix.stationmanager.api.station.dto.UpdateStationRequest
-import dev.aventix.stationmanager.api.user.StationAccessRepository
+import dev.aventix.stationmanager.api.user.access.StationAccessRepository
 import org.springframework.stereotype.Service
 import java.util.UUID
 
