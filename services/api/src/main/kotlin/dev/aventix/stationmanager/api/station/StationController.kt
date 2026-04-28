@@ -3,7 +3,6 @@ package dev.aventix.stationmanager.api.station
 import dev.aventix.stationmanager.api.station.dto.CreateStationRequest
 import dev.aventix.stationmanager.api.station.dto.StationResponse
 import dev.aventix.stationmanager.api.station.dto.UpdateStationRequest
-import dev.aventix.stationmanager.api.user.UserProfileService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -21,7 +20,6 @@ import java.util.UUID
 @RequestMapping("api/v1/stations")
 class StationController(
     private val stationService: StationService,
-    private val userProfileService: UserProfileService
 ) {
     @GetMapping()
     fun findAll(): List<StationResponse> {
