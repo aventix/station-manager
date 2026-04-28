@@ -21,7 +21,7 @@ import java.util.UUID
 class StationController(
     private val stationService: StationService,
 ) {
-    @GetMapping()
+    @GetMapping
     fun findAll(): List<StationResponse> {
         return stationService.findAll()
     }
@@ -29,6 +29,11 @@ class StationController(
     @GetMapping("/{id}")
     fun findById(@PathVariable id: UUID): StationResponse {
         return stationService.findById(id)
+    }
+
+    @GetMapping("/user/{id}")
+    fun findByKeycloakUserId(@PathVariable id: String): List<StationResponse> {
+        return stationService.findStationsFromUser(id)
     }
 
     @PostMapping

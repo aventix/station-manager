@@ -4,12 +4,14 @@ import dev.aventix.stationmanager.api.common.exception.StationNotFoundException
 import dev.aventix.stationmanager.api.station.dto.CreateStationRequest
 import dev.aventix.stationmanager.api.station.dto.StationResponse
 import dev.aventix.stationmanager.api.station.dto.UpdateStationRequest
+import dev.aventix.stationmanager.api.user.StationAccessRepository
 import org.springframework.stereotype.Service
 import java.util.UUID
 
 @Service
 class StationService(
-    private val stationRepository: StationRepository
+    private val stationRepository: StationRepository,
+    private val stationAccessRepository: StationAccessRepository,
 ) {
     fun findAll(): List<StationResponse> {
         return stationRepository.findAll().map { it.toResponse() }
@@ -49,6 +51,10 @@ class StationService(
         station.active = true
 
         return stationRepository.save(station).toResponse()
+    }
+
+    fun findStationsFromUser(keyCloakUserId: String): List<StationResponse> {
+        return stationAccessRepository.findByUser_KeycloakUserId(keyCloakUserId).map { it.station.toResponse() }
     }
 
     private fun StationEntity.toResponse(): StationResponse {
